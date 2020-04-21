@@ -1,0 +1,14 @@
+<h3>Listado parametros</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Valor</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let parametro of parametros">
+    <td>{{parametro.Nombre}}</td>
+    <td>{{parametro.Valor}}</td>
+  </tr>
+</table>

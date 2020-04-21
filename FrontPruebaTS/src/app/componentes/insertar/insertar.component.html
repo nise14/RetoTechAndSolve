@@ -1,0 +1,70 @@
+<form [formGroup]="formulario">
+
+<div class="alert alert-danger" role="alert" *ngIf="mensaje!=''">
+  {{mensaje}}
+</div>
+
+<h3>Consultar Registro trabajador</h3>
+
+<table>
+  <tr>
+    <td>
+      Cédula
+    </td>
+    <td>
+      <input type="number" formControlName="Cedula" name="Cedula" id="Cedula" maxlength="10" class="form-control" required>
+      <div *ngIf="getCedula.invalid && getCedula.touched">El campo es requerido</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" class="btn btn-outline-primary" value="Buscar" [disabled]="getCedula.invalid" (click)="buscarCedula()">
+    </td>
+  </tr>
+</table>
+<br>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Nombre</th>
+    <th scope="col">
+      Supervisa
+    </th>
+  </tr>
+</thead>  
+  <tr *ngFor="let supervisado of obtenerSupervisados">
+    <td>
+      {{
+        supervisado.UsuarioSupervisadoNombre
+      }}
+    </td>
+    <td>
+      {{
+        supervisado.UsuarioSupervisaNombre
+      }}
+    </td>
+  </tr>
+</table>
+<hr>  
+<div>
+  <h3>Archivo</h3>
+  <table>
+    <tr>
+      <td>
+        <input type="file" value="Cargar Archivo" formControlName="CargarArchivo" (change)="CargarArchivo($event)"
+        class="btn btn-secondary btn-lg" required>
+        <div class="alert alert-danger" role="alert"  *ngIf="getFile.invalid && getFile.touched">Debe seleccionar un archivo</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input class="btn btn-secondary btn-lg" type="button" (click)="GuardarArchivo()" value="Cargar archivo" [disabled]="getFile.invalid">
+      </td>
+      <td>
+        <input class="btn btn-secondary btn-lg" type="button" (click)="Descargar()" value="Descargar archivo" [disabled]="!habilitarDescargar">
+      </td>
+    </tr>
+  </table>
+</div>
+
+</form>
