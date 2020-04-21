@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiRest</name>
+    </assembly>
+    <members>
+        <member name="M:ApiRest.Controllers.ParametrosController.#ctor(Negocio.Parametros.IAdministradorParametros)">
+            <summary>
+            Controlador parametros
+            </summary>
+            <param name="administrador">administrador parametros</param>
+        </member>
+        <member name="M:ApiRest.Controllers.ParametrosController.ObtenerParametros">
+            <summary>
+            Listado de parametros
+            </summary>
+            <returns>lista de parametros</returns>
+        </member>
+        <member name="M:ApiRest.Controllers.ParametrosController.ReiniciarParametros">
+            <summary>
+            Reiniciar parametros
+            </summary>
+            <returns>se reinicio correctamente los parametros</returns>
+        </member>
+        <member name="M:ApiRest.Controllers.SupervisorController.#ctor(Negocio.Supervisor.IAdministradorObtenerSupervisado)">
+            <summary>
+            Controlador de supervisor
+            </summary>
+            <param name="administrador">inyección IAdministradorObtenerSupervisado</param>
+        </member>
+        <member name="M:ApiRest.Controllers.SupervisorController.ObtenerSupervisado(System.Int32)">
+            <summary>
+            Llamar procedimiento almacenado
+            </summary>
+            <param name="id">identificación a buscar</param>
+            <returns>datos del supervisor y a quien supervisa</returns>
+        </member>
+        <member name="M:ApiRest.Controllers.ViajesController.GuardarArchivo(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Metodo para cargar el archivo
+            </summary>
+            <param name="ifile">el archivo</param>
+            <returns>archivo procesado</returns>
+        </member>
+        <member name="M:ApiRest.Controllers.ViajesController.Descargar">
+            <summary>
+            Descargar el archivo
+            </summary>
+            <returns>archivo a descargar</returns>
+        </member>
+    </members>
+</doc>
